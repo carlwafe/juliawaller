@@ -1,0 +1,300 @@
+/*****************************/
+/*** HTML tags ***/
+/*****************************/
+
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap);
+
+* {
+	font-family: 'Inter', sans-serif;
+	font-weight: 200;
+}
+
+html {
+  height: 100%;
+}
+
+body{
+	line-height: 1.3em;
+	margin: 0px;
+	height:100%;
+}
+
+a:link {
+	text-decoration: none;
+	color:#000000;
+	cursor:pointer;
+}
+
+a:visited {
+	color:#000000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #555B9E;
+}
+
+p { margin-top: 0;
+	font-size: 0.825rem;
+}
+
+/* hides default menu from menu bar*/
+li.item-101 {
+    display: none;
+}
+
+/* solves problem where in the masonry grid layout the images always gets a space below it*/
+img {
+    vertical-align: middle;
+}
+
+
+/*****************************************/
+/***************** Header ****************/
+/*****************************************/
+
+header{
+	padding-top: 6vmin;
+	margin-right: 3vw;
+	margin-left: 3vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+@media only screen and (min-width: 350px) {
+	header {
+		flex-direction: row;
+	}
+}
+
+
+/* For menu no longer stacked on top of each other: */
+@media only screen and (min-width: 790px) {
+	header {
+		align-items: center;
+	}	
+}
+
+/* For desktop screens: */
+@media only screen and (min-width: 700px) {
+	header {
+		padding-top: 5vh;
+	}	
+}
+
+h1 {
+	margin-top: 0.67rem;
+	margin-bottom: 0.67rem;
+	line-height: 1em;
+}
+	
+@media only screen and (min-width: 250px) {
+	h1 {
+		flex-shrink: 0;
+	}
+}
+
+h1 a{
+	font-size: 2.1rem;
+	font-weight: 100;
+}
+
+h1 a:hover {
+	text-decoration: none;
+	color: #555B9E;
+}
+
+nav{
+	font-size: .875rem;
+}
+
+nav ul {
+	padding-left: 0;
+	margin-top:0.67rem;
+	list-style:none;
+ 	display: flex;
+ 	column-gap: 2em;
+ 	flex-direction: column; 	
+}
+ 
+@media only screen and (min-width: 440px) {
+ 	nav ul {
+ 		padding-left: 4vw;
+ 		flex-direction: row;
+ 		flex-wrap: wrap;
+ 	}
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+}
+
+nav ul li a.current {
+	color: #555B9E;
+}
+
+/*****************************************/
+/*************** Background **************/
+/*****************************************/
+
+#background {
+	height: 100vh;
+	background-image: url("images/background_red_m.jpg");
+	background-position: 100% 100%;
+	background-size: 100vmin;
+	background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+	#background {
+		background-position: 100% 60%;
+		background-size: 80vmin;
+	}
+}
+
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+	#background {
+		background-position: 100% 50%;
+		background-size: 60vmin;
+	}
+}
+
+/* For desktop screens: */
+@media only screen and (min-width: 900px) {
+	#background {
+		background-size: 80vmin, 100%, 100%, 100%;
+		background-position: 100% 100%, initial, initial, initial;
+		background-image: url("images/background_red.jpg")
+		/* , radial-gradient(circle at 0% 0%, rgb(207, 194, 157) , rgba(207, 194, 157, 0) 40%), 
+		radial-gradient(circle at 0% 50%, rgb(207, 194, 157) , rgba(207, 194, 157, 0) 40%), 
+		radial-gradient(circle at 0% 100%,  rgba(166, 207, 209, 1) , rgba(166, 207, 209, 0) 40%); */
+	}
+}
+
+
+/*****************************************/
+/***************** Pages *****************/
+/*****************************************/
+
+#inner_content{
+	margin-left: 5vw;
+	margin-right:5vw;
+	margin-top: 5vh;
+	padding-bottom: 1em;
+	line-height: 1.4em;
+}
+
+/* For desktop screens: */
+@media only screen and (min-width: 700px) {
+	#inner_content{
+		margin-left: 45px;
+		margin-right: 45px;
+		margin-top: 5vw;
+	}
+}
+
+.grid .inner a img {display: none;}
+
+@media only screen and (min-width: 576px) and (min-height: 576px){
+	.grid .inner img {display: none;}
+	.grid .inner a img {display: inline;}
+}
+
+.grid img {
+    width: 100%;
+	height: auto;
+}
+
+
+.inner {
+	padding: 4px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px){
+	#dog_golden {margin-left : 42%;}
+}		
+@media only screen and (min-width: 768px) and (max-width: 992px){
+	#dog_golden {margin-left : 42%;}
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+	#dog_golden {margin-left : 42%;}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1500px){
+	#dog_golden {margin-left : 21%;}
+}
+@media only screen and (min-width: 1500px) {
+	#dog_golden {margin-left : 42%;}
+}
+
+
+/* here the breakpoints are different because the pictures are to be a bit bigger, because there are not so many */
+@media only screen and (min-width: 650px) and (max-width: 900px){
+	#sky_pink_ground {margin-left : 42%;}
+}
+@media only screen and (min-width: 900px) and (max-width: 1150px){
+	#sky_pink_ground, #water_ships_bold, #pink_sky_green_field {margin-left : 42%;}
+}
+@media only screen and (min-width: 1150px) and (max-width: 1400px){
+	#sky_pink_ground, #field_night_1 {margin-left : 42%;}
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px){
+	#sky_pink_ground, #field_night_1 {margin-left : 42%;}
+	#pink_sky_green_field, #water_ships_bold {margin-left : 21%;}
+}
+@media only screen and (min-width: 1600px) {
+	#sky_pink_ground, #pink_sky_green_field {margin-left : 42%;}
+	#water_ships_bold {margin-left : 42%;}
+}
+
+/*****************************************/
+/*************** About Page **************/
+/*****************************************/
+
+#about img {
+	padding-bottom: 1em;
+}
+#about .desktop img {
+	float: right;
+	width: 67%;
+	margin-left: 40px;
+	margin-top: 0;
+}	
+	
+#about .mobile img{
+	width: 100%;
+}
+
+#about .desktop {
+	display: none;
+}
+	
+@media only screen and (min-width:950px) {
+	#about .mobile {display: none;}
+	#about .desktop {display: inline;}
+}
+
+
+/*****************************************/
+/***************** Footer ****************/
+/*****************************************/
+
+footer {
+	font-size: 0.825rem;
+    clear: both;
+    position: relative;
+    height: 1em;
+    margin-top: 2em;
+    text-align: center;
+    padding-bottom: 2em;
+    color:grey;
+}
+
+
+
+
+
+
+
+

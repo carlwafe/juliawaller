@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Site made by Carl Felix Waller designed by Ina Klein (2021)
+		                __
+	         .,-;-;-,. /'_\
+	       _/_/_/_|_\_\) /
+	     '-<_><_><_><_>=/\
+	       `/_/====/_/-'\_\
+	        ""     ""    ""	
+		-->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LLJLL2MXG"></script>
+		<script>
+ 			window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+
+  			gtag('config', 'G-1LLJLL2MXG');
+		</script>
+		<title>Julia Waller | Water</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="water color, art, julia waller">
+		<meta name="description" content="Most of the water color paintings presented here are life drawings. Julia's passion for life drawing and sculpture developed into a more expressive and experimental style after her move to Hamburg and work with the sculptor Pom.">
+		<meta name="author" content="Carl Felix Waller">
+		<meta name="copyright" content="Julia Waller" />
+		<meta name="robots" content="index"/>
+		<meta name="robots" content="follow"/>
+		<meta http-equiv="expires" content="43200"/>
+		
+		<link href="template.css?ver=1.1" rel="stylesheet" type="text/css" >
+		<?php include "favicon/favicon.html"; ?>
+		
+		<script src="/jquery.min.js?ver=3.6.0"></script>
+
+		<link href="/lightbox2-2.11.3/src/css/lightbox.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/flexmasonry-0.2.3/dist/flexmasonry.css">
+		<script src="/flexmasonry-0.2.3/dist/flexmasonry.js"></script>
+		
+	</head>
+	<body>
+		<header>
+			<h1><a href="index.html">JULIA WALLER</a></h1>
+			<nav>
+				<ul>
+					<li><a href="landscapes.html">Landscapes</a></li>
+					<li><a href="portraits.html">Portraits</a></li>
+  					<li><a class="current" href="watercolor.html">Watercolor</a></li>
+ 					<li><a href="sculptures.html">Sculptures</a></li>
+					<li><a href="drawings.html">Digital Drawings</a></li>
+  					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<main>
+			<div id="inner_content">
+				<div class="grid"> </div>
+				
+				<script>
+					const alt = [];
+					const h = [];
+					alt[0] = "woman_child_on_shoulder";
+					h[0] = "705";
+					alt[1] = "man_back";
+					h[1] = "788";
+					alt[2] = "pink_woman";
+					h[2] = "720";
+					alt[3] = "man_blue_front";
+					h[3] = "576";
+					alt[4] = "woman_sitting";
+					h[4] = "720";
+					alt[5] = "woman_from_above";
+					h[5] = "433";
+					alt[6] = "woman_in_shirt";
+					h[6] = "720";
+					alt[7] = "dog"
+					h[7] = "625";
+					alt[8] = "woman_with_socks";
+					h[8] = "439";
+					alt[9] = "woman_lying_yellow_background";
+					h[9] = "433";
+					alt[10] = "skinny_woman_back";
+					h[10] = "769";
+					alt[11] = "woman_short_hair_lying";
+					h[11] = "447";
+					alt[12] = "woman_with_mask_sitting";
+					h[12] = "754";
+					alt[13] = "red_woman_arms_folded";
+					h[13] = "871";
+					alt[14] = "po";
+					h[14] = "720";
+					
+					/*<div> <div class="inner"> <img src="images/water/700px_i.jpeg" alt="alt[i-1]"> <a href="images/water/originals/i.jpg" data-lightbox="raodtrip"> <img href="images/water/700px_i.jpeg" alt="alt[i-1]"> </a> </div> </div>*/
+					function add_image (i) {
+						let grid = document.getElementsByClassName("grid")[0];
+						
+						let div = document.createElement("div");
+						
+						let div_inner = document.createElement("div");
+						div_inner.setAttribute("class", "inner");
+						
+						let a = document.createElement("a");
+						a.href = "images/water/originals/"+alt[i-1]+".jpg";
+						a.setAttribute('data-lightbox', 'roadtrip');
+						
+						let img = document.createElement("img");
+						img.src = "images/water/"+alt[i-1]+".webp";
+						img.alt = alt[i-1];
+						img.width = "576";
+						img.height = h[i-1];	
+						if (i>1) {img.setAttribute('loading', 'lazy');}
+						else {img.setAttribute('loading', 'eager');}
+						
+						let img_a = document.createElement("img");
+						img_a.src = "images/water/"+alt[i-1]+".webp";
+						img_a.alt = alt[i-1];
+						img_a.id = "image_" +alt[i-1];
+						img_a.width = "576";
+						img_a.height = h[i-1];
+					
+						if (alt[i-1]=="dog") {
+							img_a.style.width = "58%";
+							img_a.style.marginLeft = "21%";
+							/*img_a.onload = function() {
+								let img = document.getElementById("image_"+alt[i-1]);
+								console.log("The height of image "+i+" is "+img.height);
+								img.style.marginTop = 0.5*img.height+"px";
+								img.style.marginBottom = 0.5*img.height+"px";
+							}*/
+						} else{}
+					
+						a.appendChild(img_a);
+						div_inner.appendChild(img);
+						div_inner.appendChild(a);
+						div.appendChild(div_inner);
+						grid.appendChild(div);
+					}
+					
+					for (let i=1; i<=alt.length;i++) {
+						add_image(i);
+					}
+				</script>
+				
+				<script>
+					function myFunction(x) {
+						if (x.matches) { // If media query matches
+    						FlexMasonry.init('.grid');
+  						} else {}
+					}
+
+					var x = window.matchMedia("(min-width: 576px)")
+					myFunction(x) // Call listener function at run time
+					x.addListener(myFunction) // Attach listener function on state changes
+				</script>
+			</div>
+		</main>
+		<script src="/lightbox2-2.11.3/src/js/lightbox.js"></script>
+		<script>
+    		lightbox.option({
+      			'resizeDuration': 500,
+      			'wrapAround': true,
+      			'imageFadeDuration': 400,
+      			'fadeDuration': 400,
+      			'showImageNumberLabel': false
+    		})
+		</script>
+	</body>
+</html>
