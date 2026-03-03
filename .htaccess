@@ -1,0 +1,20 @@
+# -----------------------------------------------
+# Cache Control for IONOS hosted website
+# -----------------------------------------------
+
+# 1 HTML files — always fetch fresh
+<FilesMatch "\.(html|htm)$">
+    FileETag None
+    <IfModule mod_headers.c>
+        Header unset ETag
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+    </IfModule>
+</FilesMatch>
+
+# 2️ CSS, JS, images — cache for 1 year
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|webp)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=31536000, public"
+    </IfModule>
+</FilesMatch>
