@@ -253,6 +253,7 @@ nav ul li a.current {
 /*****************************************/
 
 #about img {
+	height: auto;
 	padding-bottom: 1em;
 }
 #about .desktop img {
