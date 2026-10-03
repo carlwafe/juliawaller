@@ -141,7 +141,7 @@ nav ul li a.current {
 
 #background {
 	height: 100vh;
-	background-image: url("images/background_red_m.jpg");
+	background-image: url("images/background_red_m.webp");
 	background-position: 100% 100%;
 	background-size: 100vmin;
 	background-repeat: no-repeat;
@@ -166,7 +166,7 @@ nav ul li a.current {
 	#background {
 		background-size: 80vmin, 100%, 100%, 100%;
 		background-position: 100% 100%, initial, initial, initial;
-		background-image: url("images/background_red.jpg")
+		background-image: url("images/background_red.webp")
 		/* , radial-gradient(circle at 0% 0%, rgb(207, 194, 157) , rgba(207, 194, 157, 0) 40%), 
 		radial-gradient(circle at 0% 50%, rgb(207, 194, 157) , rgba(207, 194, 157, 0) 40%), 
 		radial-gradient(circle at 0% 100%,  rgba(166, 207, 209, 1) , rgba(166, 207, 209, 0) 40%); */
